@@ -1,0 +1,23 @@
+{
+  "name": "team-builder",
+  "version": "1.0.0",
+  "description": "team builder cli app with tests",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkraeher/Team-Builder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkraeher/Team-Builder/issues"
+  },
+  "homepage": "https://github.com/rkraeher/Team-Builder#readme"
+}
