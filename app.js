@@ -59,20 +59,52 @@ const intern = [
   },
 ];
 
+const team = [];
+
+// function addMember ()
+// I need a way to prompt the user if they want to add another team member and say when they are done.
+
 inquirer.prompt(employee).then(function (data) {
   switch (data.role) {
     case "Manager":
-      inquirer.prompt(manager).then(function (member){
-          let managerMember = new Manager(data.name, data.id, data.email, member.office);
-          console.log(managerMember);
+      inquirer.prompt(manager).then(function (member) {
+        let managerMember = new Manager(
+          data.name,
+          data.id,
+          data.email,
+          member.office
+        );
+        team.push(managerMember);
+        console.log(managerMember);
+        console.log(team);
       });
       break;
     case "Engineer":
-      //Run the engineer prompt
+      inquirer.prompt(engineer).then(function (member) {
+        let engineerMember = new Engineer(
+          data.name,
+          data.id,
+          data.email,
+          member.github
+        );
+        team.push(engineerMember);
+        console.log(engineerMember);
+        console.log(team);
+      });
       break;
     case "Intern":
-        // Run the intern prompt. 
-  };
+      inquirer.prompt(intern).then(function (member) {
+        let internMember = new Intern(
+          data.name,
+          data.id,
+          data.email,
+          member.school
+        );
+        team.push(internMember);
+        console.log(internMember);
+        console.log(team);
+      });
+  }
 });
 
 // Write code to use inquirer to gather information about the development team members,
