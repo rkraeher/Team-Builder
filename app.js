@@ -61,24 +61,27 @@ const intern = [
 
 const team = [];
 
-// I need a way to prompt the user if they want to add another team member and say when they are done.
-
 function addNewMember() {
-  inquirer.prompt(
-      {
-    type: "confirm",
-    message: "Would you like to add a member to your team?",
-    name: "add",
-  }).then(function(response){
+  inquirer
+    .prompt({
+      type: "confirm",
+      message: "Would you like to add a member to your team?",
+      name: "add",
+    })
+    .then(function (response) {
       if (response.add === true) {
-          //Run the employee inquirer prompt
-      } 
-      // Run code to terminate the prompt process
-  });
+        memberData();
+      } else {
+        // Run code to terminate the prompt process
+        console.log(
+          `You have finished adding members but I haven't finished the code!`
+        );
+        console.log(team);
+      }
+    });
+}
 
 function memberData() {
-    
-}
   inquirer.prompt(employee).then(function (data) {
     switch (data.role) {
       case "Manager":
@@ -90,8 +93,7 @@ function memberData() {
             member.office
           );
           team.push(managerMember);
-          console.log(managerMember);
-          console.log(team);
+          addNewMember();
         });
         break;
       case "Engineer":
@@ -103,8 +105,7 @@ function memberData() {
             member.github
           );
           team.push(engineerMember);
-          console.log(engineerMember);
-          console.log(team);
+          addNewMember();
         });
         break;
       case "Intern":
@@ -116,12 +117,14 @@ function memberData() {
             member.school
           );
           team.push(internMember);
-          console.log(internMember);
-          console.log(team);
+          addNewMember();
         });
     }
   });
 }
+
+//Call the function to begin team building process.
+addNewMember();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
