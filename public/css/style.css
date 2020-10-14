@@ -1,0 +1,27 @@
+.team-heading {
+    background-color: #05668D;
+    color: white;
+}
+
+.card-header {
+    background-color: #028090;
+    color: white;
+}
+
+.card-body {
+    background-color: #F0F3BD;
+}
+
+li.list-group-item {
+    background-color: #F0F3BD;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+ 
+.employee-card {
+    width: 18rem;
+}

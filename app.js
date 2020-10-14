@@ -126,4 +126,5 @@ function memberData() {
 // Call the function to begin gathering user input. 
 addNewMember();
 
-//TODO: Create my own css style, demo video, README, html validation, add to portfolio, 
+//TODO: Create my own css style, demo video, README, add to portfolio, 
+// TODO: Optional: html validation, add email and id number validation functions
