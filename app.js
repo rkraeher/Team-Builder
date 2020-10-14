@@ -83,47 +83,60 @@ function addNewMember() {
 
 function memberData() {
   inquirer.prompt(employee).then(function (data) {
-    switch (data.role) {
-      case "Manager":
-        inquirer.prompt(manager).then(function (member) {
-          let managerMember = new Manager(
-            data.name,
-            data.id,
-            data.email,
-            member.office
-          );
-          team.push(managerMember);
-          addNewMember();
-        });
-        break;
-      case "Engineer":
-        inquirer.prompt(engineer).then(function (member) {
-          let engineerMember = new Engineer(
-            data.name,
-            data.id,
-            data.email,
-            member.github
-          );
-          team.push(engineerMember);
-          addNewMember();
-        });
-        break;
-      case "Intern":
-        inquirer.prompt(intern).then(function (member) {
-          let internMember = new Intern(
-            data.name,
-            data.id,
-            data.email,
-            member.school
-          );
-          team.push(internMember);
-          addNewMember();
-        });
+    let validEmail = validateEmail(data);
+    if (validEmail === true) {
+      switch (data.role) {
+        case "Manager":
+          inquirer.prompt(manager).then(function (member) {
+            let managerMember = new Manager(
+              data.name,
+              data.id,
+              data.email,
+              member.office
+            );
+            team.push(managerMember);
+            addNewMember();
+          });
+          break;
+        case "Engineer":
+          inquirer.prompt(engineer).then(function (member) {
+            let engineerMember = new Engineer(
+              data.name,
+              data.id,
+              data.email,
+              member.github
+            );
+            team.push(engineerMember);
+            addNewMember();
+          });
+          break;
+        case "Intern":
+          inquirer.prompt(intern).then(function (member) {
+            let internMember = new Intern(
+              data.name,
+              data.id,
+              data.email,
+              member.school
+            );
+            team.push(internMember);
+            addNewMember();
+          });
+      }
+    } else {
+      console.log(`Please enter a valid email address.`);
+      memberData();
     }
   });
 }
 
-// Call the function to begin gathering user input. 
+function validateEmail(data) {
+  if (/\S+@\S+\.\S+/.test(data.email)) {
+    return true;
+  }
+  return false;
+}
+
+// Call the function to begin gathering user input.
 addNewMember();
 
 // TODO: add email and id number validation functions
