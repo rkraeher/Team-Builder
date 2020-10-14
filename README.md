@@ -23,9 +23,7 @@ Answer the prompts to add team members and their data. When you are finished, se
 Node.js, Bootstrap, JavaScript, HTML, CSS. The README was generated using [readme-generator](https://github.com/rkraeher/readme-generator).
 
 ## Demo
-Add in your demo videos, gifs, and imagers here.
-For gifs, write it like this: <img src="demo.gif" alt="demo video">
-For images, write it this way: ![Screenshot of deployed app](filepath/screenshot.png)    
+<img src="Assets/demo.gif" alt="demo video">
 
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  

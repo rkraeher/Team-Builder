@@ -126,5 +126,4 @@ function memberData() {
 // Call the function to begin gathering user input. 
 addNewMember();
 
-// TODO: demo video, add to portfolio, 
-// TODO: Optional: html validation, add email and id number validation functions
+// TODO: add email and id number validation functions
