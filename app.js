@@ -123,5 +123,7 @@ function memberData() {
   });
 }
 
-//Call the function to begin
+// Call the function to begin gathering user input. 
 addNewMember();
+
+//TODO: Create my own css style, demo video, README, html validation, add to portfolio, 
