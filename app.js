@@ -84,6 +84,7 @@ function addNewMember() {
 function memberData() {
   inquirer.prompt(employee).then(function (data) {
     let validEmail = validateEmail(data);
+    // let validId = validateId(data);
     if (validEmail === true) {
       switch (data.role) {
         case "Manager":
@@ -136,7 +137,14 @@ function validateEmail(data) {
   return false;
 }
 
+// function validateId(data) {
+//   if ( /^[1-9]\d*$/.test(data.id)) {
+//     return true;
+//   }
+//   return false; 
+// }
+
 // Call the function to begin gathering user input.
 addNewMember();
 
-// TODO: add email and id number validation functions
+// TODO: id number validation
